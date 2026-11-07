@@ -1,0 +1,31 @@
+/* Bölüm başlıkları */
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+/* Proje kutuları */
+.card {
+  background-color: white;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+/* Proje görselleri */
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  background-color: #ddd;
+  border-radius: 4px;
+}
+
+/* Profil fotoğrafı: yuvarlak */
+.profile {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #ddd;
+}

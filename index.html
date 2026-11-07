@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Arama motorları bu sayfayı listelemesin (e-posta adresi spam'e karşı) -->
+  <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
+
+  <title>Nevzat Onay - Portfolio</title>
+
+  <!-- 1) Tailwind CSS'i internetten yüklüyoruz -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- 2) Kendi CSS dosyamızı bağlıyoruz -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- MENÜ -->
+  <nav class="bg-white p-4 flex justify-between">
+    <h1 class="font-bold text-xl">Nevzat Onay</h1>
+    <div class="space-x-4">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- GİRİŞ -->
+  <header class="text-center p-16">
+    <img src="images/profile.jpg" alt="Photo of Nevzat Onay" class="profile mx-auto mb-4">
+    <h2 class="text-4xl font-bold">Hi, I'm Nevzat</h2>
+    <p class="mt-2">Immersive Technologies Student at HSLU</p>
+  </header>
+
+  <!-- HAKKIMDA -->
+  <section id="about" class="p-8 max-w-3xl mx-auto">
+    <h2 class="title">About Me</h2>
+    <p>
+      I study Immersive Technologies in Switzerland.
+      I like 3D, XR, game design and web design.
+    </p>
+  </section>
+
+  <!-- PROJELER -->
+  <section id="projects" class="p-8 max-w-3xl mx-auto">
+    <h2 class="title">Projects</h2>
+
+    <div class="grid md:grid-cols-3 gap-4">
+
+      <div class="card">
+        <img src="images/project-1.jpg" alt="Kids XR magazine page">
+        <h3 class="font-bold mt-2">Kids XR Page</h3>
+        <p>Children scan a printed magazine page with a phone and see an animation.</p>
+      </div>
+
+      <div class="card">
+        <img src="images/project-2.jpg" alt="3D promo animation">
+        <h3 class="font-bold mt-2">Promo Animation</h3>
+        <p>A 3D animation in Blender that promotes our study program.</p>
+      </div>
+
+      <div class="card">
+        <img src="images/project-3.jpg" alt="Guide for new students">
+        <h3 class="font-bold mt-2">My First Week</h3>
+        <p>A guide that helps international students in their first week in Switzerland.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- İLETİŞİM -->
+  <section id="contact" class="p-8 max-w-3xl mx-auto">
+    <h2 class="title">Contact</h2>
+    <p>Email: your.email@stud.hslu.ch</p>
+  </section>
+
+  <!-- ALT BİLGİ -->
+  <footer class="text-center p-4 bg-white">
+    © 2026 Nevzat Onay
+  </footer>
+
+</body>
+</html>
