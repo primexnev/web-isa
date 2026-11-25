@@ -64,3 +64,50 @@ body {
   border: 4px solid white;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
+
+/* ---------- ARKA PLAN ---------- */
+
+/* Giriş bölümü: iki yumuşak renk lekesi + açık gradyan */
+.hero {
+  background:
+    radial-gradient(circle at 20% 30%, #bfdbfe, transparent 40%),
+    radial-gradient(circle at 80% 70%, #ddd6fe, transparent 40%),
+    linear-gradient(#f8fafc, #f9fafb);
+}
+
+/* ---------- ANİMASYONLAR ---------- */
+
+/* 1) Sayfa açılınca: aşağıdan yukarı kayarak belirme */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeUp 0.8s ease-out;
+}
+
+/* 2) Kaydırınca: önce gizli ve biraz aşağıda */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s, transform 0.8s;
+}
+
+/* JavaScript "show" ekleyince görünür olur */
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hareket istemeyen kullanıcılar için animasyonları kapat */
+@media (prefers-reduced-motion: reduce) {
+  .fade-in { animation: none; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+}

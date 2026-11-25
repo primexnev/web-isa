@@ -16,7 +16,8 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- 3) Kendi CSS dosyamızı bağlıyoruz -->
-  <link rel="stylesheet" href="css/style.css">
+  <!-- ?v=3: tarayıcı yeni CSS'i yüklesin (önbellek yerine) -->
+  <link rel="stylesheet" href="css/style.css?v=3">
 </head>
 
 <body class="bg-gray-50 text-gray-800">
@@ -34,7 +35,9 @@
   </nav>
 
   <!-- GİRİŞ -->
-  <header class="text-center px-4 py-20">
+  <!-- hero = arka plan; fade-in = açılışta yavaşça belirir -->
+  <header class="hero text-center px-4 py-24">
+    <div class="fade-in">
     <img src="images/profile.jpg" alt="Initials of Nevzat Onay" class="profile mx-auto mb-6">
     <p class="text-blue-600 font-semibold uppercase tracking-widest text-sm">Immersive Technologies · HSLU</p>
     <h2 class="text-4xl md:text-5xl font-bold mt-2">Hi, I'm Nevzat</h2>
@@ -45,12 +48,14 @@
     <!-- Butonlar -->
     <div class="mt-8 flex justify-center gap-4">
       <a href="#projects" class="btn bg-blue-600 text-white">See my projects</a>
-      <a href="#contact" class="btn border border-gray-300">Contact me</a>
+      <a href="#contact" class="btn bg-white border border-gray-300">Contact me</a>
+    </div>
     </div>
   </header>
 
   <!-- HAKKIMDA -->
-  <section id="about" class="px-4 py-12 max-w-4xl mx-auto">
+  <!-- reveal = aşağı kaydırınca belirir -->
+  <section id="about" class="reveal px-4 py-12 max-w-4xl mx-auto">
     <h2 class="title">About Me</h2>
     <p class="text-gray-600">
       I am a BSc Immersive Technologies student at HSLU in Switzerland.
@@ -69,7 +74,7 @@
   </section>
 
   <!-- PROJELER -->
-  <section id="projects" class="px-4 py-12 max-w-4xl mx-auto">
+  <section id="projects" class="reveal px-4 py-12 max-w-4xl mx-auto">
     <h2 class="title">Projects</h2>
 
     <!-- Telefonda 1 sütun, geniş ekranda 2 sütun -->
@@ -94,7 +99,7 @@
   </section>
 
   <!-- İLETİŞİM -->
-  <section id="contact" class="px-4 py-12 max-w-4xl mx-auto text-center">
+  <section id="contact" class="reveal px-4 py-12 max-w-4xl mx-auto text-center">
     <h2 class="title">Contact</h2>
     <p class="text-gray-600">Do you have a question or an idea? Write me an email.</p>
     <p class="mt-4 font-semibold text-blue-600">nevzat.onay@stud.hslu.ch</p>
@@ -104,6 +109,23 @@
   <footer class="text-center p-6 text-sm text-gray-500 border-t">
     © 2026 Nevzat Onay · Built with HTML &amp; Tailwind CSS
   </footer>
+
+  <!-- Aşağı kaydırınca bölümleri göster -->
+  <script>
+    // Bir bölüm ekrana girince ona "show" sınıfını ekle
+    const observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    });
+
+    // "reveal" sınıfı olan her bölümü izle
+    document.querySelectorAll(".reveal").forEach(function (section) {
+      observer.observe(section);
+    });
+  </script>
 
 </body>
 </html>
