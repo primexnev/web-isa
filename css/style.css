@@ -3,9 +3,40 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Tüm sayfanın yazı tipi */
+/* Tüm sayfa: yazı tipi + koyu "oyun haritası" arka planı */
 body {
   font-family: "Inter", sans-serif;
+  background-color: #0b1020;
+  /* İnce kareli zemin (oyun haritası / level editor gibi) */
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: gridMove 20s linear infinite;
+}
+
+/* Kareler çok yavaş çapraz kaysın */
+@keyframes gridMove {
+  to { background-position: 40px 40px; }
+}
+
+/* Arkada iki yumuşak neon ışık (mor ve camgöbeği), sayfa kayarken yerinde durur */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(124, 58, 237, 0.25), transparent 40%),
+    radial-gradient(circle at 85% 80%, rgba(34, 211, 238, 0.18), transparent 40%);
+}
+
+/* Menü: yarı saydam koyu */
+.nav {
+  background-color: rgba(11, 16, 32, 0.8);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #1f2937;
 }
 
 /* Sol üstteki isim (logo): oyun temalı yazı tipi */
@@ -32,8 +63,9 @@ body {
 
 /* Yetenek etiketleri */
 .tag {
-  background-color: #dbeafe;
-  color: #1e40af;
+  background-color: rgba(34, 211, 238, 0.1);
+  color: #67e8f9;
+  border: 1px solid rgba(34, 211, 238, 0.3);
   padding: 4px 12px;
   border-radius: 999px;
   font-size: 14px;
@@ -41,16 +73,17 @@ body {
 
 /* Proje kutuları */
 .card {
-  background-color: white;
+  background-color: #111827;
+  border: 1px solid #1f2937;
   padding: 16px;
   border-radius: 12px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s;  /* hareket 0.2 saniyede olsun */
+  transition: transform 0.2s, border-color 0.2s;  /* hareket 0.2 saniyede olsun */
 }
 
 /* Fare kutunun üstüne gelince biraz yukarı kalksın */
 .card:hover {
   transform: translateY(-4px);
+  border-color: #22d3ee;   /* kenar neon renge dönsün */
 }
 
 /* Proje görselleri */
@@ -58,7 +91,7 @@ body {
   width: 100%;
   height: 180px;
   object-fit: cover;
-  background-color: #ddd;
+  background-color: #1f2937;
   border-radius: 8px;
 }
 
@@ -68,25 +101,9 @@ body {
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
-  background-color: #ddd;
-  border: 4px solid white;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-}
-
-/* ---------- ARKA PLAN ---------- */
-
-/* Giriş bölümü: renkleri yavaşça değişen koyu gradyan */
-.hero {
-  background: linear-gradient(-45deg, #0f0c29, #302b63, #1e3a8a, #24243e);
-  background-size: 400% 400%;            /* gradyanı büyüt ki kaydırılabilsin */
-  animation: gradientMove 15s ease infinite;
-}
-
-/* Gradyanı soldan sağa ve geri kaydır */
-@keyframes gradientMove {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  background-color: #1f2937;
+  border: 4px solid #22d3ee;
+  box-shadow: 0 0 24px rgba(34, 211, 238, 0.4);   /* neon parıltı */
 }
 
 /* ---------- ANİMASYONLAR ---------- */
@@ -127,6 +144,6 @@ body {
 
 /* Hareket istemeyen kullanıcılar için animasyonları kapat */
 @media (prefers-reduced-motion: reduce) {
-  .fade-in, .hero { animation: none; }
+  .fade-in, body { animation: none; }
   .reveal { opacity: 1; transform: none; transition: none; }
 }
