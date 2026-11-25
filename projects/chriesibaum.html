@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Arama motorları bu sayfayı listelemesin -->
+  <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
+
+  <title>Vom Chriesibaum ins Glas - Nevzat Onay</title>
+
+  <!-- 1) Tailwind CSS'i internetten yüklüyoruz -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- 2) Kendi CSS dosyamızı bağlıyoruz (../ = bir üst klasöre çık) -->
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- MENÜ -->
+  <nav class="bg-white p-4 flex justify-between">
+    <a href="../index.html#projects">← Back to home</a>
+    <h1 class="font-bold text-xl">Nevzat Onay</h1>
+  </nav>
+
+  <!-- PROJE -->
+  <main class="p-8 max-w-3xl mx-auto">
+    <h2 class="text-4xl font-bold mb-2">Vom Chriesibaum ins Glas</h2>
+    <p class="mb-6">Web AR story for the kids' section of Stadtmagazin Zug, spring 2027</p>
+
+    <img src="../images/project-1.jpg" alt="Magazine spread with a cherry tree growing out of the page" class="rounded-lg mb-8">
+
+    <h3 class="title">About the project</h3>
+    <p class="mb-8">
+      Children scan a code on the printed magazine pages with a phone, and the page comes to life.
+      There is no app to install, no account and no tracking.
+    </p>
+
+    <h3 class="title">Try it</h3>
+    <p class="mb-4">Scan this code with your phone to open the project.</p>
+    <img src="../images/chriesibaum-qr.png" alt="QR code that opens the project" class="w-48 mb-8">
+
+    <h3 class="title">The experience</h3>
+    <ol class="list-decimal pl-5 mb-8 space-y-2">
+      <li>Digging: a farmer and the child dig up a chest with a book and a cherry stone inside.</li>
+      <li>Pop-up book: the book unfolds and tells the history of Zug cherries, page by page.</li>
+      <li>Game: inspired by the Chriesisturm ladder race, with a race, a cherry orchard, a kitchen and results.</li>
+    </ol>
+
+    <h3 class="title">How it was built</h3>
+    <ul class="list-disc pl-5 space-y-2">
+      <li>Written with Three.js and MindAR</li>
+      <li>3D models generated with Meshy and prepared in Blender</li>
+      <li>Fallbacks: a 3D view without AR, and a 2D SVG version without WebGL</li>
+      <li>Narration in Swiss German with subtitles (text and audio are still provisional)</li>
+    </ul>
+  </main>
+
+  <!-- ALT BİLGİ -->
+  <footer class="text-center p-4 bg-white">
+    © 2026 Nevzat Onay
+  </footer>
+
+  <!-- Esc tuşuna basınca ana sayfaya dön -->
+  <script>
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        window.location.href = "../index.html#projects";
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Arama motorları bu sayfayı listelemesin -->
+  <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
+
+  <title>Ninja Squad - Nevzat Onay</title>
+
+  <!-- 1) Tailwind CSS'i internetten yüklüyoruz -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- 2) Kendi CSS dosyamızı bağlıyoruz (../ = bir üst klasöre çık) -->
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- MENÜ -->
+  <nav class="bg-white p-4 flex justify-between">
+    <a href="../index.html#projects">← Back to home</a>
+    <h1 class="font-bold text-xl">Nevzat Onay</h1>
+  </nav>
+
+  <!-- PROJE -->
+  <main class="p-8 max-w-3xl mx-auto">
+    <h2 class="text-4xl font-bold mb-2">Ninja Squad</h2>
+    <p class="mb-6">Drop in. Grab the loot. Make it out alive.</p>
+
+    <img src="../images/project-4.jpg" alt="Three Ninja Squad characters in front of a setting sun" class="rounded-lg mb-8">
+
+    <h3 class="title">About the project</h3>
+    <p class="mb-8">
+      Ninja Squad is a 3D extraction shooter that plays in the browser.
+      You can play solo or as a duo.
+    </p>
+
+    <h3 class="title">Play it</h3>
+    <a href="https://play.ninjasquad.io" target="_blank" class="inline-block bg-gray-800 text-white px-4 py-2 rounded-lg">play.ninjasquad.io</a>
+  </main>
+
+  <!-- ALT BİLGİ -->
+  <footer class="text-center p-4 bg-white">
+    © 2026 Nevzat Onay
+  </footer>
+
+  <!-- Esc tuşuna basınca ana sayfaya dön -->
+  <script>
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        window.location.href = "../index.html#projects";
+      }
+    });
+  </script>
+
+</body>
+</html>

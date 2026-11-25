@@ -9,11 +9,12 @@ Simple portfolio website for the HSLU course WEB_ISA.
 
 ## Folder structure
 ```
-portfolio/
-├── index.html      → the page (content + Tailwind classes)
+web-isa/
+├── index.html      → the home page (content + Tailwind classes)
+├── projects/       → one page per project
 ├── css/
 │   └── style.css   → own CSS rules
-├── images/         → profile and project images (public domain or own)
+├── images/         → profile and project images (own work)
 └── README.md
 ```
 
