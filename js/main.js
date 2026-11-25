@@ -18,42 +18,34 @@ document.querySelectorAll(".reveal").forEach(function (section) {
 
 
 // =====================================================
-// BÖLÜM B: Mini oyun – Yıldızı 3 kez yakala
+// BÖLÜM B: Kendini yazan yazı ("I build ...")
 // =====================================================
 
-// B1) HTML'deki parçaları bul
-const arena = document.getElementById("arena");
-const star = document.getElementById("star");
-const scoreText = document.getElementById("score");
+// B1) Sırayla yazılacak kelimeler
+const words = ["games", "XR experiences", "3D worlds"];
 
-// B2) Başlangıç puanı ve hedef
-let score = 0;
-const goal = 3;
+// B2) Yazının gideceği yer (HTML'deki #typed)
+const typed = document.getElementById("typed");
 
-// B3) Yıldızı oyun alanında rastgele bir yere taşı
-function moveStar() {
-  const x = Math.random() * (arena.clientWidth - 40);   // 40 = yıldızın genişliği
-  const y = Math.random() * (arena.clientHeight - 40);  // 40 = yıldızın yüksekliği
-  star.style.left = x + "px";
-  star.style.top = y + "px";
+// B3) Hangi kelimedeyiz, kaçıncı harfteyiz
+let wordIndex = 0;
+let letterIndex = 0;
+
+// B4) Her çağrıda bir harf daha yaz
+function typeLetter() {
+  const word = words[wordIndex];
+  letterIndex = letterIndex + 1;
+  typed.textContent = word.slice(0, letterIndex);   // kelimenin ilk X harfi
+
+  if (letterIndex < word.length) {
+    setTimeout(typeLetter, 100);       // sonraki harf: 0.1 saniye sonra
+  } else {
+    // B5) Kelime bitti: sonraki kelimeye geç, baştan başla
+    wordIndex = (wordIndex + 1) % words.length;     // sona gelince başa dön
+    letterIndex = 0;
+    setTimeout(typeLetter, 1500);      // 1.5 saniye bekle
+  }
 }
 
-// B4) Yıldıza tıklanınca puanı artır
-star.addEventListener("click", function () {
-  score = score + 1;
-  scoreText.textContent = score + " / " + goal;
-
-  if (score < goal) {
-    moveStar();                        // daha bitmedi: yıldız kaçsın
-  } else {
-    // B5) Kazandın: yıldızı gizle, mesaj göster, projelere kaydır
-    star.hidden = true;
-    scoreText.textContent = "Level complete!";
-    setTimeout(function () {
-      document.getElementById("projects").scrollIntoView();
-    }, 800);                           // 0.8 saniye bekle
-  }
-});
-
-// B6) Sayfa açılınca yıldızı ilk yerine koy
-moveStar();
+// B6) Sayfa açılınca yazmaya başla
+typeLetter();

@@ -17,7 +17,7 @@
 
   <!-- 3) Kendi CSS dosyamızı bağlıyoruz -->
   <!-- ?v=3: tarayıcı yeni CSS'i yüklesin (önbellek yerine) -->
-  <link rel="stylesheet" href="css/style.css?v=10">
+  <link rel="stylesheet" href="css/style.css?v=11">
 </head>
 
 <body class="text-gray-100">
@@ -37,15 +37,16 @@
 
   <!-- GİRİŞ: fade-in = açılışta yavaşça belirir -->
   <!-- min-h-screen = giriş tüm ekranı kaplar; flex + justify-center = içerik ortada -->
-  <header class="min-h-screen flex flex-col justify-center text-center px-4 py-16">
+  <header class="relative min-h-screen flex flex-col justify-center text-center px-4 py-16">
 
     <!-- İçerik -->
     <div class="fade-in">
       <img src="images/profile.jpg" alt="Initials of Nevzat Onay" class="profile mx-auto mb-6">
       <p class="text-cyan-300 font-semibold uppercase tracking-widest text-sm">Immersive Technologies · HSLU</p>
       <h2 class="text-4xl md:text-5xl font-bold mt-2 text-white">Hi, I'm Nevzat</h2>
-      <p class="mt-4 text-gray-300 max-w-xl mx-auto">
-        I build games, XR experiences and 3D work.
+      <!-- Kendini yazan yazı: JavaScript #typed içine harf harf yazar -->
+      <p class="mt-4 text-xl text-gray-300">
+        I build <span id="typed" class="text-cyan-300 font-semibold">games</span><span class="cursor">|</span>
       </p>
 
       <!-- Butonlar -->
@@ -53,24 +54,10 @@
         <a href="#projects" class="btn bg-blue-600 text-white">See my projects</a>
         <a href="#contact" class="btn border border-cyan-400 text-cyan-300">Contact me</a>
       </div>
-
-      <!-- ===== MİNİ OYUN: Yıldızı yakala ===== -->
-      <div class="game mt-12 mx-auto">
-        <!-- 1) Oyun başlığı ve puan -->
-        <div class="flex justify-between items-center mb-2 text-sm">
-          <span class="game-title">Mini game: catch the star 3×</span>
-          <span id="score" class="text-cyan-300 font-semibold">0 / 3</span>
-        </div>
-
-        <!-- 2) Oyun alanı ve içindeki yıldız -->
-        <div id="arena" class="arena">
-          <button id="star" class="star" aria-label="Catch the star">★</button>
-        </div>
-
-        <!-- 3) Oynamak istemeyen için atlama linki -->
-        <a href="#projects" class="block mt-3 text-sm text-gray-400 hover:text-cyan-400">Skip to projects ↓</a>
-      </div>
     </div>
+
+    <!-- Aşağı kaydır oku (zıplar) -->
+    <a href="#about" class="scroll-down" aria-label="Scroll down">↓</a>
   </header>
 
   <!-- HAKKIMDA -->
@@ -165,8 +152,8 @@
     © 2026 Nevzat Onay · Built with HTML &amp; Tailwind CSS
   </footer>
 
-  <!-- JavaScript dosyamız: kaydırma animasyonu + mini oyun -->
-  <script src="js/main.js?v=9"></script>
+  <!-- JavaScript dosyamız: kaydırma animasyonu + kendini yazan yazı -->
+  <script src="js/main.js?v=11"></script>
 
 </body>
 </html>
