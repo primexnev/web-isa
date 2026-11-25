@@ -137,6 +137,49 @@ body::before {
   transform: translateY(0);
 }
 
+/* ---------- MİNİ OYUN ---------- */
+
+/* Oyunun kutusu (en fazla 420px genişlik) */
+.game {
+  max-width: 420px;
+}
+
+/* Oyun başlığı: logo ile aynı oyun yazı tipi */
+.game-title {
+  font-family: "Orbitron", sans-serif;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Oyun alanı: yıldız bunun içinde dolaşır */
+.arena {
+  position: relative;          /* yıldız buna göre yerleşir */
+  height: 160px;
+  border: 1px solid rgba(34, 211, 238, 0.4);
+  border-radius: 12px;
+  background-color: rgba(17, 24, 39, 0.6);
+}
+
+/* Yıldız */
+.star {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  font-size: 32px;
+  line-height: 40px;
+  color: #facc15;
+  cursor: pointer;
+  transition: top 0.3s, left 0.3s;          /* yeni yerine kayarak gitsin */
+  animation: glow 1s ease-in-out infinite;  /* sürekli parlasın */
+}
+
+/* Parlama: büyüyüp küçülme + ışık */
+@keyframes glow {
+  0%, 100% { transform: scale(1);   text-shadow: 0 0 6px #facc15; }
+  50%      { transform: scale(1.2); text-shadow: 0 0 18px #facc15; }
+}
+
 /* Telefon ekranı (640px'den dar) */
 @media (max-width: 640px) {
   .title { font-size: 24px; }
@@ -144,6 +187,6 @@ body::before {
 
 /* Hareket istemeyen kullanıcılar için animasyonları kapat */
 @media (prefers-reduced-motion: reduce) {
-  .fade-in, body { animation: none; }
+  .fade-in, body, .star { animation: none; }
   .reveal { opacity: 1; transform: none; transition: none; }
 }

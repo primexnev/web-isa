@@ -17,7 +17,7 @@
 
   <!-- 3) Kendi CSS dosyamızı bağlıyoruz -->
   <!-- ?v=3: tarayıcı yeni CSS'i yüklesin (önbellek yerine) -->
-  <link rel="stylesheet" href="css/style.css?v=8">
+  <link rel="stylesheet" href="css/style.css?v=9">
 </head>
 
 <body class="text-gray-100">
@@ -36,7 +36,8 @@
   </nav>
 
   <!-- GİRİŞ: fade-in = açılışta yavaşça belirir -->
-  <header class="text-center px-4 py-24">
+  <!-- min-h-screen = giriş tüm ekranı kaplar; flex + justify-center = içerik ortada -->
+  <header class="min-h-screen flex flex-col justify-center text-center px-4 py-16">
 
     <!-- İçerik -->
     <div class="fade-in">
@@ -51,6 +52,23 @@
       <div class="mt-8 flex flex-wrap justify-center gap-4">
         <a href="#projects" class="btn bg-blue-600 text-white">See my projects</a>
         <a href="#contact" class="btn border border-cyan-400 text-cyan-300">Contact me</a>
+      </div>
+
+      <!-- ===== MİNİ OYUN: Yıldızı yakala ===== -->
+      <div class="game mt-12 mx-auto">
+        <!-- 1) Oyun başlığı ve puan -->
+        <div class="flex justify-between items-center mb-2 text-sm">
+          <span class="game-title">Mini game: catch the star 3×</span>
+          <span id="score" class="text-cyan-300 font-semibold">0 / 3</span>
+        </div>
+
+        <!-- 2) Oyun alanı ve içindeki yıldız -->
+        <div id="arena" class="arena">
+          <button id="star" class="star" aria-label="Catch the star">★</button>
+        </div>
+
+        <!-- 3) Oynamak istemeyen için atlama linki -->
+        <a href="#projects" class="block mt-3 text-sm text-gray-400 hover:text-cyan-400">Skip to projects ↓</a>
       </div>
     </div>
   </header>
@@ -120,22 +138,8 @@
     © 2026 Nevzat Onay · Built with HTML &amp; Tailwind CSS
   </footer>
 
-  <!-- Aşağı kaydırınca bölümleri göster -->
-  <script>
-    // Bir bölüm ekrana girince ona "show" sınıfını ekle
-    const observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        }
-      });
-    });
-
-    // "reveal" sınıfı olan her bölümü izle
-    document.querySelectorAll(".reveal").forEach(function (section) {
-      observer.observe(section);
-    });
-  </script>
+  <!-- JavaScript dosyamız: kaydırma animasyonu + mini oyun -->
+  <script src="js/main.js?v=9"></script>
 
 </body>
 </html>
