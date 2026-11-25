@@ -147,6 +147,12 @@ body {
   transform: translateY(0);
 }
 
+/* Telefon ekranı (640px'den dar) */
+@media (max-width: 640px) {
+  .title { font-size: 24px; }
+  .float-icon { font-size: 28px; }
+}
+
 /* Hareket istemeyen kullanıcılar için animasyonları kapat */
 @media (prefers-reduced-motion: reduce) {
   .fade-in, .grid-floor, .float-icon { animation: none; }
