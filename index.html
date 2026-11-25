@@ -17,7 +17,7 @@
 
   <!-- 3) Kendi CSS dosyamızı bağlıyoruz -->
   <!-- ?v=3: tarayıcı yeni CSS'i yüklesin (önbellek yerine) -->
-  <link rel="stylesheet" href="css/style.css?v=3">
+  <link rel="stylesheet" href="css/style.css?v=4">
 </head>
 
 <body class="bg-gray-50 text-gray-800">
@@ -37,19 +37,30 @@
   <!-- GİRİŞ -->
   <!-- hero = arka plan; fade-in = açılışta yavaşça belirir -->
   <header class="hero text-center px-4 py-24">
-    <div class="fade-in">
-    <img src="images/profile.jpg" alt="Initials of Nevzat Onay" class="profile mx-auto mb-6">
-    <p class="text-blue-600 font-semibold uppercase tracking-widest text-sm">Immersive Technologies · HSLU</p>
-    <h2 class="text-4xl md:text-5xl font-bold mt-2">Hi, I'm Nevzat</h2>
-    <p class="mt-4 text-gray-600 max-w-xl mx-auto">
-      I build games, XR experiences and 3D work.
-    </p>
 
-    <!-- Butonlar -->
-    <div class="mt-8 flex justify-center gap-4">
-      <a href="#projects" class="btn bg-blue-600 text-white">See my projects</a>
-      <a href="#contact" class="btn bg-white border border-gray-300">Contact me</a>
-    </div>
+    <!-- Arka plan: hareket eden neon ızgara zemin -->
+    <div class="grid-floor"></div>
+
+    <!-- Süzülen oyun kolu sembolleri -->
+    <span class="float-icon" style="top: 15%; left: 10%;">△</span>
+    <span class="float-icon" style="top: 25%; right: 12%; animation-delay: 1s;">○</span>
+    <span class="float-icon" style="top: 60%; left: 18%; animation-delay: 2s;">□</span>
+    <span class="float-icon" style="top: 55%; right: 20%; animation-delay: 3s;">✕</span>
+
+    <!-- İçerik (arka planın önünde) -->
+    <div class="hero-content fade-in">
+      <img src="images/profile.jpg" alt="Initials of Nevzat Onay" class="profile mx-auto mb-6">
+      <p class="text-cyan-300 font-semibold uppercase tracking-widest text-sm">Immersive Technologies · HSLU</p>
+      <h2 class="text-4xl md:text-5xl font-bold mt-2 text-white">Hi, I'm Nevzat</h2>
+      <p class="mt-4 text-gray-300 max-w-xl mx-auto">
+        I build games, XR experiences and 3D work.
+      </p>
+
+      <!-- Butonlar -->
+      <div class="mt-8 flex justify-center gap-4">
+        <a href="#projects" class="btn bg-blue-600 text-white">See my projects</a>
+        <a href="#contact" class="btn bg-white text-gray-800">Contact me</a>
+      </div>
     </div>
   </header>
 

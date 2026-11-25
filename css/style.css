@@ -67,12 +67,53 @@ body {
 
 /* ---------- ARKA PLAN ---------- */
 
-/* Giriş bölümü: iki yumuşak renk lekesi + açık gradyan */
+/* Giriş bölümü: koyu "oyun" arka planı */
 .hero {
-  background:
-    radial-gradient(circle at 20% 30%, #bfdbfe, transparent 40%),
-    radial-gradient(circle at 80% 70%, #ddd6fe, transparent 40%),
-    linear-gradient(#f8fafc, #f9fafb);
+  position: relative;      /* içindeki parçalar buna göre yerleşir */
+  overflow: hidden;        /* dışarı taşan kısmı gizle */
+  background: linear-gradient(#0f0c29, #302b63);
+}
+
+/* İçerik arka planın önünde dursun */
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Neon ızgara zemin (eski arcade oyunları gibi) */
+.grid-floor {
+  position: absolute;
+  bottom: -50%;
+  left: -50%;
+  width: 200%;
+  height: 100%;
+  background-image:
+    linear-gradient(#ff00ff55 2px, transparent 2px),   /* yatay çizgiler */
+    linear-gradient(90deg, #ff00ff55 2px, transparent 2px);  /* dikey çizgiler */
+  background-size: 50px 50px;
+  transform: perspective(300px) rotateX(60deg);  /* zemini yatır */
+  animation: moveGrid 2s linear infinite;
+}
+
+/* Izgarayı sürekli bize doğru kaydır */
+@keyframes moveGrid {
+  from { background-position: 0 0; }
+  to   { background-position: 0 50px; }
+}
+
+/* Süzülen semboller */
+.float-icon {
+  position: absolute;
+  font-size: 40px;
+  color: #22d3ee;
+  opacity: 0.5;
+  animation: floatIcon 4s ease-in-out infinite;
+}
+
+/* Yukarı aşağı süzülme */
+@keyframes floatIcon {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-20px); }
 }
 
 /* ---------- ANİMASYONLAR ---------- */
@@ -108,6 +149,6 @@ body {
 
 /* Hareket istemeyen kullanıcılar için animasyonları kapat */
 @media (prefers-reduced-motion: reduce) {
-  .fade-in { animation: none; }
+  .fade-in, .grid-floor, .float-icon { animation: none; }
   .reveal { opacity: 1; transform: none; transition: none; }
 }
