@@ -17,7 +17,7 @@
 
   <!-- 3) Kendi CSS dosyamızı bağlıyoruz -->
   <!-- ?v=3: tarayıcı yeni CSS'i yüklesin (önbellek yerine) -->
-  <link rel="stylesheet" href="css/style.css?v=9">
+  <link rel="stylesheet" href="css/style.css?v=10">
 </head>
 
 <body class="text-gray-100">
@@ -77,20 +77,47 @@
   <!-- reveal = aşağı kaydırınca belirir -->
   <section id="about" class="reveal px-4 py-12 max-w-4xl mx-auto">
     <h2 class="title">About Me</h2>
-    <p class="text-gray-400">
+
+    <!-- 1) Kısa tanıtım -->
+    <p class="text-gray-300">
       I am a BSc Immersive Technologies student at HSLU in Switzerland.
-      I build games and XR experiences with Unity and C#, and I create 3D work in Blender.
-      I am also interested in game design and web design.
+      I make games: mobile games and web-based games that run directly in the browser.
+    </p>
+    <p class="text-gray-400 mt-3">
+      I work with Unreal Engine and Unity, build 3D models in Blender
+      and bring them to the web with Three.js. I care about games that are fun, clear and easy to start.
     </p>
 
-    <!-- Yetenekler: küçük etiketler -->
-    <div class="flex flex-wrap gap-2 mt-6">
+    <!-- 2) Ne yapıyorum: telefonda 1, geniş ekranda 3 kutu -->
+    <div class="grid sm:grid-cols-3 gap-4 mt-8">
+      <div class="info-box">
+        <h3 class="font-bold text-white">Games</h3>
+        <p class="text-sm text-gray-400 mt-1">Mobile and web games with Unreal Engine, Unity and Three.js.</p>
+      </div>
+      <div class="info-box">
+        <h3 class="font-bold text-white">XR</h3>
+        <p class="text-sm text-gray-400 mt-1">AR experiences that bring printed pages to life on a phone.</p>
+      </div>
+      <div class="info-box">
+        <h3 class="font-bold text-white">3D</h3>
+        <p class="text-sm text-gray-400 mt-1">Characters, scenes and animation in Blender.</p>
+      </div>
+    </div>
+
+    <!-- 3) Yetenekler: küçük etiketler -->
+    <div class="flex flex-wrap gap-2 mt-8">
+      <span class="tag">Unreal Engine</span>
       <span class="tag">Unity</span>
       <span class="tag">C#</span>
       <span class="tag">Blender</span>
       <span class="tag">Three.js</span>
       <span class="tag">HTML &amp; CSS</span>
     </div>
+
+    <!-- 4) Kısa bilgiler -->
+    <p class="text-sm text-gray-400 mt-6">
+      Based in Switzerland · Languages: Turkish, English, German
+    </p>
   </section>
 
   <!-- PROJELER -->
