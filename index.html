@@ -9,73 +9,100 @@
 
   <title>Nevzat Onay - Portfolio</title>
 
-  <!-- 1) Tailwind CSS'i internetten yüklüyoruz -->
+  <!-- 1) Yazı tipi: Google Fonts'tan "Inter" -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- 2) Tailwind CSS'i internetten yüklüyoruz -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- 2) Kendi CSS dosyamızı bağlıyoruz -->
+  <!-- 3) Kendi CSS dosyamızı bağlıyoruz -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="bg-gray-100 text-gray-800">
+<body class="bg-gray-50 text-gray-800">
 
-  <!-- MENÜ -->
-  <nav class="bg-white p-4 flex justify-between">
-    <h1 class="font-bold text-xl">Nevzat Onay</h1>
-    <div class="space-x-4">
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+  <!-- MENÜ: sticky = kaydırınca üstte kalır -->
+  <nav class="bg-white shadow-sm sticky top-0 z-10">
+    <div class="max-w-4xl mx-auto p-4 flex flex-wrap justify-between items-center gap-2">
+      <h1 class="font-bold text-xl">Nevzat <span class="text-blue-600">Onay</span></h1>
+      <div class="space-x-6 text-sm">
+        <a href="#about" class="hover:text-blue-600">About</a>
+        <a href="#projects" class="hover:text-blue-600">Projects</a>
+        <a href="#contact" class="hover:text-blue-600">Contact</a>
+      </div>
     </div>
   </nav>
 
   <!-- GİRİŞ -->
-  <header class="text-center p-16">
-    <img src="images/profile.jpg" alt="Initials of Nevzat Onay" class="profile mx-auto mb-4">
-    <h2 class="text-4xl font-bold">Hi, I'm Nevzat</h2>
-    <p class="mt-2">Immersive Technologies Student at HSLU</p>
+  <header class="text-center px-4 py-20">
+    <img src="images/profile.jpg" alt="Initials of Nevzat Onay" class="profile mx-auto mb-6">
+    <p class="text-blue-600 font-semibold uppercase tracking-widest text-sm">Immersive Technologies · HSLU</p>
+    <h2 class="text-4xl md:text-5xl font-bold mt-2">Hi, I'm Nevzat</h2>
+    <p class="mt-4 text-gray-600 max-w-xl mx-auto">
+      I build games, XR experiences and 3D work.
+    </p>
+
+    <!-- Butonlar -->
+    <div class="mt-8 flex justify-center gap-4">
+      <a href="#projects" class="btn bg-blue-600 text-white">See my projects</a>
+      <a href="#contact" class="btn border border-gray-300">Contact me</a>
+    </div>
   </header>
 
   <!-- HAKKIMDA -->
-  <section id="about" class="p-8 max-w-3xl mx-auto">
+  <section id="about" class="px-4 py-12 max-w-4xl mx-auto">
     <h2 class="title">About Me</h2>
-    <p>
+    <p class="text-gray-600">
       I am a BSc Immersive Technologies student at HSLU in Switzerland.
       I build games and XR experiences with Unity and C#, and I create 3D work in Blender.
       I am also interested in game design and web design.
     </p>
+
+    <!-- Yetenekler: küçük etiketler -->
+    <div class="flex flex-wrap gap-2 mt-6">
+      <span class="tag">Unity</span>
+      <span class="tag">C#</span>
+      <span class="tag">Blender</span>
+      <span class="tag">Three.js</span>
+      <span class="tag">HTML &amp; CSS</span>
+    </div>
   </section>
 
   <!-- PROJELER -->
-  <section id="projects" class="p-8 max-w-3xl mx-auto">
+  <section id="projects" class="px-4 py-12 max-w-4xl mx-auto">
     <h2 class="title">Projects</h2>
 
-    <div class="grid md:grid-cols-2 gap-4">
+    <!-- Telefonda 1 sütun, geniş ekranda 2 sütun -->
+    <div class="grid md:grid-cols-2 gap-6">
 
       <!-- target="_blank": proje sayfası yeni sekmede açılır -->
-      <a href="projects/chriesibaum.html" target="_blank" class="card block hover:shadow-lg">
+      <a href="projects/chriesibaum.html" target="_blank" class="card block">
         <img src="images/project-1.jpg" alt="Magazine spread with a cherry tree growing out of the page">
-        <h3 class="font-bold mt-2">Vom Chriesibaum ins Glas</h3>
-        <p>A web AR story for a city magazine. Children scan the printed page with a phone and it comes to life.</p>
+        <h3 class="font-bold mt-3">Vom Chriesibaum ins Glas</h3>
+        <p class="text-sm text-gray-600 mt-1">A web AR story for a city magazine. Children scan the printed page with a phone and it comes to life.</p>
+        <p class="text-sm text-blue-600 font-semibold mt-3">View project →</p>
       </a>
 
-      <a href="projects/ninja-squad.html" target="_blank" class="card block hover:shadow-lg">
+      <a href="projects/ninja-squad.html" target="_blank" class="card block">
         <img src="images/project-4.jpg" alt="Three Ninja Squad characters in front of a setting sun">
-        <h3 class="font-bold mt-2">Ninja Squad</h3>
-        <p>A 3D extraction shooter that plays in the browser, solo or as a duo.</p>
+        <h3 class="font-bold mt-3">Ninja Squad</h3>
+        <p class="text-sm text-gray-600 mt-1">A 3D extraction shooter that plays in the browser, solo or as a duo.</p>
+        <p class="text-sm text-blue-600 font-semibold mt-3">View project →</p>
       </a>
 
     </div>
   </section>
 
   <!-- İLETİŞİM -->
-  <section id="contact" class="p-8 max-w-3xl mx-auto">
+  <section id="contact" class="px-4 py-12 max-w-4xl mx-auto text-center">
     <h2 class="title">Contact</h2>
-    <p>Email: nevzat.onay@stud.hslu.ch</p>
+    <p class="text-gray-600">Do you have a question or an idea? Write me an email.</p>
+    <p class="mt-4 font-semibold text-blue-600">nevzat.onay@stud.hslu.ch</p>
   </section>
 
   <!-- ALT BİLGİ -->
-  <footer class="text-center p-4 bg-white">
-    © 2026 Nevzat Onay
+  <footer class="text-center p-6 text-sm text-gray-500 border-t">
+    © 2026 Nevzat Onay · Built with HTML &amp; Tailwind CSS
   </footer>
 
 </body>
