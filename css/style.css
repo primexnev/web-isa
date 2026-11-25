@@ -75,53 +75,18 @@ body {
 
 /* ---------- ARKA PLAN ---------- */
 
-/* Giriş bölümü: koyu "oyun" arka planı */
+/* Giriş bölümü: renkleri yavaşça değişen koyu gradyan */
 .hero {
-  position: relative;      /* içindeki parçalar buna göre yerleşir */
-  overflow: hidden;        /* dışarı taşan kısmı gizle */
-  background: linear-gradient(#0f0c29, #302b63);
+  background: linear-gradient(-45deg, #0f0c29, #302b63, #1e3a8a, #24243e);
+  background-size: 400% 400%;            /* gradyanı büyüt ki kaydırılabilsin */
+  animation: gradientMove 15s ease infinite;
 }
 
-/* İçerik arka planın önünde dursun */
-.hero-content {
-  position: relative;
-  z-index: 1;
-}
-
-/* Neon ızgara zemin (eski arcade oyunları gibi) */
-.grid-floor {
-  position: absolute;
-  bottom: -50%;
-  left: -50%;
-  width: 200%;
-  height: 100%;
-  background-image:
-    linear-gradient(#ff00ff55 2px, transparent 2px),   /* yatay çizgiler */
-    linear-gradient(90deg, #ff00ff55 2px, transparent 2px);  /* dikey çizgiler */
-  background-size: 50px 50px;
-  transform: perspective(300px) rotateX(60deg);  /* zemini yatır */
-  animation: moveGrid 2s linear infinite;
-}
-
-/* Izgarayı sürekli bize doğru kaydır */
-@keyframes moveGrid {
-  from { background-position: 0 0; }
-  to   { background-position: 0 50px; }
-}
-
-/* Süzülen semboller */
-.float-icon {
-  position: absolute;
-  font-size: 40px;
-  color: #22d3ee;
-  opacity: 0.5;
-  animation: floatIcon 4s ease-in-out infinite;
-}
-
-/* Yukarı aşağı süzülme */
-@keyframes floatIcon {
-  0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(-20px); }
+/* Gradyanı soldan sağa ve geri kaydır */
+@keyframes gradientMove {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* ---------- ANİMASYONLAR ---------- */
@@ -158,11 +123,10 @@ body {
 /* Telefon ekranı (640px'den dar) */
 @media (max-width: 640px) {
   .title { font-size: 24px; }
-  .float-icon { font-size: 28px; }
 }
 
 /* Hareket istemeyen kullanıcılar için animasyonları kapat */
 @media (prefers-reduced-motion: reduce) {
-  .fade-in, .grid-floor, .float-icon { animation: none; }
+  .fade-in, .hero { animation: none; }
   .reveal { opacity: 1; transform: none; transition: none; }
 }
